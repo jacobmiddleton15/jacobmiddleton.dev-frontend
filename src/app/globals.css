@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/*:root {
+  --background: white;
+  --foreground: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: black;
+    --foreground: white;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}*/
+
+.hover-accent {
+  @apply hover:text-orange-900 dark:hover:text-orange-900 transition-colors;
+}
+
+.animate-typing {
+  font-family: "Fira Code", monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black; /* cursor */
+  width: 0;
+  animation: typing 2s steps(18, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15.25ch } /* adjust based on name length */
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: black }
+}
