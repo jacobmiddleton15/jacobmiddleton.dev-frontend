@@ -25,7 +25,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/jacob-middleton-6667a1158/"
+            href="https://www.linkedin.com/in/jacobmiddleton15/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
