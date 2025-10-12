@@ -128,7 +128,7 @@ export default function About() {
         <a
             href="/Middleton_Jacob_CV.pdf"
             download
-            className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded hover:bg-orange-900 hover:text-white transition"
+            className="inline-flex items-center gap-2 border-2 border-orange-600 bg-orange-600 text-white px-4 py-2 rounded hover:bg-white hover:text-green-950 hover:border-green-950 transition"
         >
             <Download className="w-5 h-5" />
             Download CV (PDF)

@@ -19,7 +19,7 @@ body {
 }*/
 
 .hover-accent {
-  @apply hover:text-orange-900 dark:hover:text-orange-900 transition-colors;
+  @apply hover:text-orange-600 dark:hover:text-orange-600 transition-colors;
 }
 
 .animate-typing {
