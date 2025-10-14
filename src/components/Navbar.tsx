@@ -3,14 +3,18 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 //import ThemeToggle from "./ThemeToggle"
 import EmailButton from "./EmailButton";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
       <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
-        
-        {/* Logo */}
-        <h1 className="text-xl font-mono font-bold animate-typing">jacob-middleton</h1>
+
+        {/* Logo and site title */}
+        <Link href="/" className="flex items-center gap-3 text-xl font-bold">
+          <span className="text-orange-600">❯</span>
+          <span className="font-mono animate-typing">jacob-middleton</span>
+        </Link>
 
         {/* Social Links */}
         <div className="flex items-center space-x-6">
