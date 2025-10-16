@@ -39,7 +39,7 @@ export default function Navbar() {
           </a>
 
           <div className="w-6 h-6">
-            <EmailButton icon tooltipLeft />
+            <EmailButton icon />
           </div>
 
           {/* TODO: Fix theme toggle
