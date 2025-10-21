@@ -2,6 +2,7 @@
 
 import { Mail } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 interface EmailButtonProps {
     icon?: boolean;         // show icon or show the email text
@@ -12,6 +13,8 @@ export default function EmailButton({ icon = false, tooltipAbove = false }: Emai
   const [copied, setCopied] = useState(false);
   const [dockRight, setDockRight] = useState(false);
   const [showAbove, setShowAbove] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState({ top: 0, left: 0 });
+  const [mounted, setMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const email = "jacobmiddleton15@gmail.com";
 
@@ -36,9 +39,15 @@ export default function EmailButton({ icon = false, tooltipAbove = false }: Emai
 
     setDockRight(rightEdge < 75);   // if within 75px of right edge → dock to the right edge of the viewport
     setShowAbove(tooltipAbove || bottomEdge < 60);  // if within 60px of bottom edge → show above
+
+    setTooltipPos({
+      top: showAbove ? rect.top - 32 : rect.bottom + 8, // above or below button
+      left: rect.left + rect.width / 2,
+    });
   };
 
   useEffect(() => {
+    setMounted(true);
     updateTooltipPosition();
     window.addEventListener("resize", updateTooltipPosition);
     window.addEventListener("scroll", updateTooltipPosition);
@@ -46,30 +55,37 @@ export default function EmailButton({ icon = false, tooltipAbove = false }: Emai
       window.removeEventListener("resize", updateTooltipPosition);
       window.removeEventListener("scroll", updateTooltipPosition);
     };
-  }, []);
+  }, [showAbove]);
 
   return (
-    <button
-      ref={buttonRef}
-      onClick={handleCopy}
-      className="relative hover-accent cursor-pointer"
-      aria-label="Copy email to clipboard"
-    >
-      {icon ? <Mail /> : <span>{email}</span>}
+    <>
+      <button
+        ref={buttonRef}
+        onClick={handleCopy}
+        className="relative hover-accent cursor-pointer"
+        aria-label="Copy email to clipboard"
+      >
+        {icon ? <Mail /> : <span>{email}</span>}
+      </button>
 
-      {copied && (
-        <span 
+      {mounted && copied && createPortal(
+        <span
           className={`
-            ${dockRight && !showAbove ? "fixed right-4 -translate-y-2/5" : "absolute left-1/2 -translate-x-1/2"} 
-            whitespace-nowrap text-xs text-gray-200 dark:text-gray-200 
-            bg-gray-700/80 dark:bg-gray-700/80 
-            px-2 py-1 rounded shadow z-50
-            ${showAbove ? "-top-8.5" : "-bottom-9"}
-            transition-opacity duration-300 ease-in-out`}
+            fixed whitespace-nowrap text-xs text-gray-200
+            bg-gray-700/80 px-2 py-1 rounded shadow
+            z-[9999] transition-opacity duration-300 ease-in-out
+          `}
+          style={{
+            top: tooltipPos.top,
+            left: dockRight ? undefined : tooltipPos.left,
+            right: dockRight ? "8px" : undefined,
+            transform: dockRight ? "none" : "translateX(-50%)",
+          }}
         >
           Email copied to clipboard
-        </span>
+        </span>,
+        document.body
       )}
-    </button>
+    </>
   );
 }
