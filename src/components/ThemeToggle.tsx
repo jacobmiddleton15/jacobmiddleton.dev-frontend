@@ -1,45 +1,29 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/providers/ThemeProvider";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    // check localStorage first
-    if (localStorage.theme === "dark") {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      localStorage.theme = "dark";
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      localStorage.theme = "light";
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null; // avoid hydration mismatch
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-      aria-label="Toggle Theme"
+      aria-label="Toggle theme"
     >
-      {theme === "light" ? (
-        <Moon className="w-5 h-5" />
-      ) : (
-        <Sun className="w-5 h-5" />
-      )}
+
+      <span className="hover-accent">
+        {theme === "light" ? (
+          <Sun /> // className="text-yellow-500"
+        ) : (
+          <Moon /> // className="text-gray-300" 
+        )}
+      </span>
     </button>
   );
 }

@@ -2,7 +2,7 @@ import { Download } from "lucide-react";
 
 export default function About() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12 space-y-12 text-gray-900 dark:text-gray-900">
+    <main className="max-w-4xl mx-auto px-6 py-12 space-y-12">
 
       {/* About Me */}
       <section>
@@ -128,7 +128,7 @@ export default function About() {
         <a
             href="/Middleton_Jacob_Resume.pdf"
             download
-            className="inline-flex items-center gap-2 border-2 border-orange-600 bg-orange-600 text-white px-4 py-2 rounded hover:bg-white hover:text-green-950 hover:border-green-950 transition"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded bg-blue-500 text-white hover:bg-orange-600 transition"
         >
             <Download className="w-5 h-5" />
             Download résumé (PDF)
