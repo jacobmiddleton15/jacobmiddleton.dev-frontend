@@ -39,8 +39,8 @@ export default function About() {
           <div>
             <h3 className="font-semibold">Frameworks &amp; Development</h3>
             <p>
-              React, Next.js, NestJS, Bootstrap, WinForms, Android XML Layouts,
-              HTML, CSS, .NET Framework 4.0 – 4.8, ASP.NET, Node.js, Gradle
+              React, Next.js, NestJS, Bootstrap, Razor, WinForms, Android XML Layouts,
+              HTML, CSS, .NET Framework, ASP.NET, Node.js, Gradle
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function About() {
         <h2 className="text-2xl font-bold mb-4">Work Experience</h2>
         <div>
           <p className="font-semibold">
-            Alliant Systems – Irving, Texas (May 2019 – October 2025)
+            Alliant Systems by TEXO – Irving, Texas (May 2019 – October 2025)
           </p>
           <p className="italic">Full Stack Software Developer</p>
 
@@ -126,7 +126,7 @@ export default function About() {
       {/* Download button */}
       <section className="text-center mt-12">
         <a
-            href="/Middleton_Jacob_resume.pdf"
+            href="/Middleton_Jacob_Resume.pdf"
             download
             className="inline-flex items-center gap-2 border-2 border-orange-600 bg-orange-600 text-white px-4 py-2 rounded hover:bg-white hover:text-green-950 hover:border-green-950 transition"
         >
