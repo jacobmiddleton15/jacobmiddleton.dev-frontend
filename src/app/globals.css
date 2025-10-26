@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {     /* light mode variables */
-  --background: #ffffff;
-  --text: #1e293b;
-  --primary: #2563eb;
+  --background: var(--color-slate-50);
+  --text: var(--color-zinc-950);
+  --primary: var(--color-orange-600);
 }
 
 html.dark { /* dark mode variables */
-  --background: #0f172a;
-  --text: #e2e8f0;
-  --primary: #60a5fa;
+  --background: var(--color-zinc-900);
+  --text: var(--color-slate-50);
+  --primary: var(--color-orange-600);
 }
 
 html, main, body {

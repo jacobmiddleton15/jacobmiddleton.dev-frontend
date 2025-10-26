@@ -2,7 +2,7 @@ import EmailButton from "./EmailButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-2 mt-12">
+    <footer className="bg-zinc-950 text-slate-50 py-2 mt-12">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
         
         {/* Left side: Links + Contact */}
