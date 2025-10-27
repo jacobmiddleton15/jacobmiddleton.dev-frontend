@@ -128,10 +128,14 @@ export default function About() {
         <a
             href="/Middleton_Jacob_Resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-4 py-2 rounded bg-blue-500 text-white hover:bg-orange-600 transition"
+            className="
+                inline-flex items-center gap-2 
+                px-4 py-2 
+                rounded bg-[var(--primary)] text-slate-50 font-semibold
+                border-2 border-[var(--background)] hover:border-[var(--primary)] transition-colors duration-300
+              "
         >
-            <Download className="w-5 h-5" />
-            Download résumé (PDF)
+            <Download className="w-5 h-5" /> Download résumé (PDF)
         </a>
       </section>
 

@@ -27,7 +27,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 text-xl font-bold">
-          <span className="text-orange-600">❯</span>
+          <span className="text-[var(--primary)]">❯</span>
           <span className="font-mono animate-typing">jacob-middleton</span>
         </Link>
 

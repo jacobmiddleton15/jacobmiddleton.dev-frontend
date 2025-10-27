@@ -19,7 +19,7 @@ html, main, body {
 }
 
 .hover-accent {
-  @apply hover:text-orange-600 transition-colors;
+  @apply hover:text-[var(--primary)] transition-colors duration-300;
 }
 
 .animate-typing {
