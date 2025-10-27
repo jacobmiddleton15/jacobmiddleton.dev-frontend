@@ -5,11 +5,11 @@ export default function Footer() {
     <footer className="bg-zinc-950 text-slate-50 py-2 mt-12">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
         
-        {/* Left side: Links + Contact */}
-        <div className="flex flex-row gap-12">
+        {/* Links + Contact */}
+        <div className="flex flex-row gap-6">
           
           {/* Links section */}
-          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6 text-sm font-bold">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6 text-sm font-semibold">
             <a
               href="https://github.com/jacobmiddleton15"
               target="_blank"
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Contact section */}
-          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6 text-sm font-bold">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6 text-sm font-semibold ml-auto md:ml-0 text-right">
             <EmailButton tooltipAbove />
             <a href="tel:9036029492" className="hover-accent">
               (903) 602-9492
@@ -38,7 +38,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Right side: Copyright */}
+        {/* Copyright */}
         <div className="text-sm text-center md:text-right">
           © {new Date().getFullYear()} Jacob Middleton
         </div>
