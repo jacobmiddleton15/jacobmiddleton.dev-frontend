@@ -71,7 +71,7 @@ export default function EmailButton({ icon = false, tooltipAbove = false }: Emai
       {mounted && copied && createPortal(
         <span
           className={`
-            fixed whitespace-nowrap text-xs text-gray-200
+            fixed whitespace-nowrap text-xs text-slate-50
             bg-gray-700/80 px-2 py-1 rounded shadow
             z-[9999] transition-opacity duration-300 ease-in-out
           `}
