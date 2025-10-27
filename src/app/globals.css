@@ -26,7 +26,7 @@ html, main, body {
   font-family: "Fira Code", monospace;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid black; /* cursor */
+  border-right: 2px solid var(--text); /* cursor */
   width: 0;
   animation: typing 2s steps(15, end) forwards, blink 0.7s step-end infinite;
 }
@@ -37,6 +37,5 @@ html, main, body {
 }
 
 @keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: black }
+  50% { border-color: transparent }
 }
