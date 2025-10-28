@@ -132,7 +132,7 @@ export default function About() {
                 inline-flex items-center gap-2 
                 px-4 py-2 
                 rounded bg-[var(--primary)] text-slate-50 font-semibold
-                border-2 border-[var(--background)] hover:border-[var(--primary)] transition-colors duration-300
+                hover:scale-105 transition-transform duration-300
               "
         >
             <Download className="w-5 h-5" /> Download résumé (PDF)
