@@ -65,7 +65,7 @@ export default function Navbar() {
 
         {/* Hamburger menu button */}
         <button
-          className="sm:hidden p-2 hover-accent transition-colors"
+          className="sm:hidden p-2 hover-accent transition-colors cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
